@@ -16,3 +16,16 @@ const tasks = [
 		index: 2,
 	},
 ];
+
+const tasksList = document.querySelector("list");
+tasks.forEach((task) => {
+	tasksList.innerHTML += `
+        <li class="task">
+            <input class="checkbox" type="checkbox" ${
+							task.completed ? "checked" : "unchecked"
+						}>
+            <p>${task.description}</p>
+            <button class="btn btn-select"></button>
+        </li>
+  `;
+});
