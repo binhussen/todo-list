@@ -1,0 +1,87 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	color: #545862;
+}
+.container {
+	box-shadow: 0px 2px 8px rgb(0 0 0 / 15%);
+	max-width: 500px;
+	margin: auto;
+}
+
+.title {
+	font-weight: 400;
+	padding: 1rem;
+	line-height: 20px;
+	margin: 0;
+	width: 100%;
+}
+
+.today-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-color: #f5f5f5;
+}
+
+.btn {
+	width: 100%;
+	border: none;
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+.btn-refresh {
+}
+
+.input-list {
+	padding: 7px 2em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.input {
+	width: 100%;
+	line-height: 50px;
+	height: 50px;
+	border: none;
+	font-style: italic;
+	font-size: 1.1rem;
+}
+
+.btn-add {
+	float: right;
+}
+
+.list {
+	list-style: none;
+	position: relative;
+	text-align: left;
+}
+
+.task {
+	background-color: #fff;
+	padding: 7px 3em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.checkbox {
+	float: left;
+	height: 16px;
+	width: 16px;
+	margin: 17px 0px;
+	margin-left: -2em;
+}
+
+.disc {
+	font-size: 1rem;
+}
+
+.btn-clear {
+	padding: 1rem;
+	background-color: #f5f5f5;
+}

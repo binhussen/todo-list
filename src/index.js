@@ -1,4 +1,6 @@
 /** @format */
+import "./style.css";
+
 const tasks = [
 	{
 		description: "Read Official Documentation",
@@ -17,7 +19,7 @@ const tasks = [
 	},
 ];
 
-const tasksList = document.querySelector("list");
+const tasksList = document.querySelector(".list");
 
 tasks.sort((a, b) => a.index - b.index);
 
@@ -27,7 +29,7 @@ tasks.forEach((task) => {
             <input class="checkbox" type="checkbox" ${
 							task.completed ? "checked" : "unchecked"
 						}>
-            <p>${task.description}</p>
+            <p class="disc">${task.description}</p>
             <button class="btn btn-select"></button>
         </li>
   `;
