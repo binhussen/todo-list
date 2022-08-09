@@ -30,7 +30,7 @@ tasks.forEach((task) => {
 							task.completed ? "checked" : "unchecked"
 						}>
             <p class="disc">${task.description}</p>
-            <button class="btn btn-select"></button>
+            <button class="btn btn-select"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
         </li>
   `;
 });
