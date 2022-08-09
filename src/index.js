@@ -18,6 +18,9 @@ const tasks = [
 ];
 
 const tasksList = document.querySelector("list");
+
+tasks.sort((a, b) => a.index - b.index);
+
 tasks.forEach((task) => {
 	tasksList.innerHTML += `
         <li class="task">
