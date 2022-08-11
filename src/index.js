@@ -1,36 +1,34 @@
 /** @format */
+import { getFromLocalStorage, setLocalStorage } from './local_storage.js';
+import Todo from './operation.js';
 import './style.css';
 
-const tasks = [
-  {
-    description: 'Read Official Documentation',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Read js guide',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Training on js projects',
-    completed: false,
-    index: 2,
-  },
-];
-
+const btnAdd = document.querySelector('.btn-add');
 const tasksList = document.querySelector('.list');
 
-tasks.sort((a, b) => a.index - b.index);
+const todo = new Todo();
 
-tasks.forEach((task) => {
-  tasksList.innerHTML += `
-        <li class="task">
-            <input class="checkbox" type="checkbox" ${
-  task.completed ? 'checked' : 'unchecked'
-}>
-            <p class="disc">${task.description}</p>
-            <button type="button" class="btn btn-select"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
-        </li>
-  `;
+document.addEventListener('DOMContentLoaded', () => {
+  todo.displayTasks();
+});
+
+btnAdd.addEventListener('click', todo.addTask);
+
+tasksList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove')) {
+    const targetId = e.target.getAttribute('id');
+    todo.removeTask(targetId);
+  } else if (e.target.closest('.disc')) {
+    const disc = e.target.closest('.disc');
+    disc.addEventListener('keyup', () => {
+      const tasks = getFromLocalStorage();
+      const index = +disc.id;
+      const task = tasks.find((task) => task.index === index);
+      task.description = disc.value.trim();
+      setLocalStorage(tasks);
+    });
+  } else if (e.target.classList.contains('checkbox')) {
+    const targetId = e.target.getAttribute('id');
+    todo.complete(targetId);
+  }
 });

@@ -58,6 +58,7 @@
   border: none;
   font-style: italic;
   font-size: 1.1rem;
+  outline: none;
 }
 
 .btn-add {
@@ -89,6 +90,12 @@
 
 .disc {
   font-size: 1rem;
+  border: none;
+  outline: none;
+}
+
+.disc:hover {
+  border: none;
 }
 
 .btn-clear {
@@ -96,6 +103,16 @@
   background-color: #f5f5f5;
 }
 
-.btn-select {
+.btn-remove {
   width: 2rem;
+}
+
+.content {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.completed {
+  text-decoration: line-through;
 }
