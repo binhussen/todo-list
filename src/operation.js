@@ -20,6 +20,7 @@ export default class Todo {
     };
     this.tasks.push(task);
     setLocalStorage(this.tasks);
+    input.value = '';
     this.displayTasks();
   };
 
