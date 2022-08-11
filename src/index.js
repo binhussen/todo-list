@@ -28,7 +28,16 @@ tasksList.addEventListener('click', (e) => {
       setLocalStorage(tasks);
     });
   } else if (e.target.classList.contains('checkbox')) {
-    const targetId = e.target.getAttribute('id');
-    todo.complete(targetId);
+    const checkbox = document.querySelectorAll('.checkbox');
+    checkbox.forEach((item) => {
+      item.addEventListener('change', (e) => {
+        const targetId = e.target.getAttribute('id');
+        if (e.target.checked) {
+          todo.complete(targetId, true);
+        } else {
+          todo.complete(targetId, false);
+        }
+      });
+    });
   }
 });

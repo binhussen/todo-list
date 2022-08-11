@@ -32,10 +32,10 @@ export default class Todo {
         <li class="task"><div class="content"> <input class="checkbox" type="checkbox" ${
           task.completed ? 'checked' : 'unchecked'
         } id="${task.index}"> <input type="text" id="${task.index}" value="${
-          task.description
-        }" ${
-          task.completed ? "class='disc completed'" : "class='disc '"
-        }></input></div>
+        task.description
+      }" ${
+        task.completed ? "class='disc completed'" : "class='disc '"
+      }></input></div>
             <button type="button" class="btn btn-remove"><i id="${
               task.index
             }" class="fa fa-times remove" aria-hidden="true"></i></button>
@@ -53,9 +53,9 @@ export default class Todo {
     this.displayTasks();
   };
 
-  complete = (i) => {
+  complete = (i, value) => {
     const task = this.tasks.find((task) => task.index === +i);
-    task.completed = !task.completed;
+    task.completed = value;
     setLocalStorage(this.tasks);
     this.displayTasks();
   };
