@@ -30,10 +30,13 @@ export default class Todo {
 		this.tasks.forEach((task) => {
 			tasksList.innerHTML += `
             <li class="task">
+			<div class="content">
                 <input class="checkbox" type="checkbox" ${
 									task.completed ? "checked" : "unchecked"
 								}>
-            <p class="disc">${task.description}</p>
+			<input type="text" class="disc" id="${task.index}" value="${
+				task.description
+			}"></input></div>
             <button type="button" class="btn btn-remove"><i id="${
 							task.index
 						}" class="fa fa-times remove" aria-hidden="true"></i></button>

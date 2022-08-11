@@ -1,4 +1,5 @@
 /** @format */
+import { getFromLocalStorage, setLocalStorage } from "./local_storage.js";
 import Todo from "./operation.js";
 import "./style.css";
 
@@ -7,9 +8,11 @@ const btnRefresh = document.querySelector(".btn-refresh");
 const btnClear = document.querySelector(".btn-clear");
 const tasksList = document.querySelector(".list");
 
-const tasks = [];
-
 const todo = new Todo();
+
+document.addEventListener("DOMContentLoaded", () => {
+	todo.displayTasks();
+});
 
 btnAdd.addEventListener("click", todo.addTask);
 
@@ -17,9 +20,14 @@ tasksList.addEventListener("click", (e) => {
 	if (e.target.classList.contains("remove")) {
 		const targetId = e.target.getAttribute("id");
 		todo.removeTask(targetId);
+	} else if (e.target.closest(".disc")) {
+		const disc = e.target.closest(".disc");
+		disc.addEventListener("keyup", () => {
+			const tasks = getFromLocalStorage();
+			const index = +disc.id;
+			const task = tasks.find((task) => task.index === index);
+			task.description = disc.value.trim();
+			setLocalStorage(tasks);
+		});
 	}
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-	todo.displayTasks();
 });
