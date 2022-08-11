@@ -2,100 +2,100 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  color: #545862;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	color: #545862;
 }
 
 .container {
-  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
-  max-width: 500px;
-  margin: 30vh auto;
+	box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+	max-width: 500px;
+	margin: 30vh auto;
 }
 
 .title {
-  font-weight: 400;
-  padding: 1rem;
-  line-height: 20px;
-  margin: 0;
-  width: 100%;
+	font-weight: 400;
+	padding: 1rem;
+	line-height: 20px;
+	margin: 0;
+	width: 100%;
 }
 
 .today-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: #f5f5f5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-color: #f5f5f5;
 }
 
 .btn {
-  width: 100%;
-  border: none;
-  font-size: 1.1rem;
-  cursor: pointer;
-  background-color: #fff;
+	width: 100%;
+	border: none;
+	font-size: 1.1rem;
+	cursor: pointer;
+	background-color: #fff;
 }
 
 .btn-refresh {
-  width: 2rem;
-  background-color: #f5f5f5;
+	width: 2rem;
+	background-color: #f5f5f5;
 }
 
 .input-list {
-  padding: 7px 0 0 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  display: flex;
+	padding: 7px 0 0 2rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	display: flex;
 }
 
 .input {
-  width: 100%;
-  line-height: 50px;
-  height: 50px;
-  border: none;
-  font-style: italic;
-  font-size: 1.1rem;
+	width: 100%;
+	line-height: 50px;
+	height: 50px;
+	border: none;
+	font-style: italic;
+	font-size: 1.1rem;
 }
 
 .btn-add {
-  width: 2rem;
+	width: 2rem;
 }
 
 .list {
-  list-style: none;
-  position: relative;
-  text-align: left;
+	list-style: none;
+	position: relative;
+	text-align: left;
 }
 
 .task {
-  background-color: #fff;
-  padding: 7px 0 7px 3em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+	background-color: #fff;
+	padding: 7px 0 7px 3em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
 }
 
 .checkbox {
-  height: 16px;
-  width: 16px;
-  margin: 17px 0;
-  margin-left: -2em;
+	height: 16px;
+	width: 16px;
+	margin: 17px 0;
+	margin-left: -2em;
 }
 
 .disc {
-  font-size: 1rem;
+	font-size: 1rem;
 }
 
 .btn-clear {
-  padding: 1rem;
-  background-color: #f5f5f5;
+	padding: 1rem;
+	background-color: #f5f5f5;
 }
 
-.btn-select {
-  width: 2rem;
+.btn-remove {
+	width: 2rem;
 }

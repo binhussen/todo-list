@@ -30,9 +30,16 @@ export default class Todo {
 									task.completed ? "checked" : "unchecked"
 								}>
             <p class="disc">${task.description}</p>
-            <button type="button" class="btn btn-select"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-remove"><i id="${
+							task.index
+						}" class="fa fa-times remove" aria-hidden="true"></i></button>
         </li>
   `;
 		});
+	};
+
+	removeTask = (i) => {
+		const filteredTasks = this.tasks.filter((task) => task.index !== +i);
+		this.displayTasks();
 	};
 }
