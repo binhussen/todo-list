@@ -5,6 +5,7 @@ import './style.css';
 
 const btnAdd = document.querySelector('.btn-add');
 const tasksList = document.querySelector('.list');
+const btnClear = document.querySelector('.btn-clear');
 
 const todo = new Todo();
 
@@ -40,4 +41,8 @@ tasksList.addEventListener('click', (e) => {
       });
     });
   }
+});
+
+btnClear.addEventListener('click', () => {
+  todo.clearAll();
 });
