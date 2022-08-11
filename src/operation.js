@@ -20,6 +20,7 @@ export default class Todo {
     };
     this.tasks.push(task);
     setLocalStorage(this.tasks);
+    input.value = '';
     this.displayTasks();
   };
 
@@ -53,10 +54,18 @@ export default class Todo {
     this.displayTasks();
   };
 
-  complete = (i) => {
+  complete = (i, value) => {
     const task = this.tasks.find((task) => task.index === +i);
-    task.completed = !task.completed;
+    task.completed = value;
     setLocalStorage(this.tasks);
+    this.displayTasks();
+  };
+
+  clearAll = () => {
+    const unCompletedTasks = this.tasks.filter(
+      (task) => task.completed === false,
+    );
+    setLocalStorage(unCompletedTasks);
     this.displayTasks();
   };
 }
