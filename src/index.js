@@ -19,3 +19,7 @@ tasksList.addEventListener("click", (e) => {
 		todo.removeTask(targetId);
 	}
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+	todo.displayTasks();
+});
