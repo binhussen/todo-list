@@ -34,9 +34,9 @@ export default class Todo {
                 <input class="checkbox" type="checkbox" ${
 									task.completed ? "checked" : "unchecked"
 								}>
-			<input type="text" class="disc" id="${task.index}" value="${
-				task.description
-			}"></input></div>
+			<input type="text" id="${task.index}" value="${task.description}" ${
+				task.completed ? "class='disc completed'" : "class='disc '"
+			}></input></div>
             <button type="button" class="btn btn-remove"><i id="${
 							task.index
 						}" class="fa fa-times remove" aria-hidden="true"></i></button>
