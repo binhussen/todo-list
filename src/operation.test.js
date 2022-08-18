@@ -51,4 +51,9 @@ describe('Manipulate status and content updates', () => {
     todo.editTask(0, 'Test 4');
     expect(todo.tasks[0]?.description).toBe('Test 4');
   });
+
+  test('Check task status', () => {
+    todo.complete(0, true);
+    expect(todo.tasks.at(0).completed).toBe(true);
+  });
 });
