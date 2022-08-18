@@ -1,5 +1,4 @@
 /** @format */
-import { getFromLocalStorage, setLocalStorage } from './local_storage.js';
 import Todo from './operation.js';
 import './style.css';
 
