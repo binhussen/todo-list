@@ -45,4 +45,10 @@ describe('Manipulate status and content updates', () => {
     todo.clearAll();
     expect(todo.tasks).toHaveLength(0);
   });
+
+  test('Editing task Description', () => {
+    todo.addTask('Test 3');
+    todo.editTask(0, 'Test 4');
+    expect(todo.tasks[0]?.description).toBe('Test 4');
+  });
 });

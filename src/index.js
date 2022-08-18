@@ -27,11 +27,8 @@ tasksList.addEventListener('click', (e) => {
   } else if (e.target.closest('.disc')) {
     const disc = e.target.closest('.disc');
     disc.addEventListener('keyup', () => {
-      const tasks = getFromLocalStorage();
       const index = +disc.id;
-      const task = tasks.find((task) => task.index === index);
-      task.description = disc.value.trim();
-      setLocalStorage(tasks);
+      todo.editTask(index, disc.value);
     });
   } else if (e.target.classList.contains('checkbox')) {
     const checkbox = document.querySelectorAll('.checkbox');
