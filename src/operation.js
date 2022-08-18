@@ -66,4 +66,13 @@ export default class Todo {
     setLocalStorage(unCompletedTasks);
     this.displayTasks();
   };
+
+  editTask = (i, value) => {
+    const task = this.tasks.find((task) => task.index === +i);
+    if (task) {
+      task.description = value.trim();
+    }
+    setLocalStorage(this.tasks);
+    this.displayTasks();
+  };
 }
