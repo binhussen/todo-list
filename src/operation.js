@@ -2,8 +2,6 @@
 
 import { getFromLocalStorage, setLocalStorage } from './local_storage.js';
 
-const input = document.querySelector('.input');
-const tasksList = document.querySelector('.list');
 export default class Todo {
   tasks;
 
@@ -11,22 +9,21 @@ export default class Todo {
     this.tasks = getFromLocalStorage();
   }
 
-  addTask = (e) => {
-    e.preventDefault();
+  addTask = (disc) => {
     const task = {
       index: this.tasks.length,
-      description: input.value,
+      description: disc,
       completed: false,
     };
     this.tasks.push(task);
     setLocalStorage(this.tasks);
-    input.value = '';
     this.displayTasks();
   };
 
   displayTasks = () => {
     this.tasks = getFromLocalStorage();
     this.tasks.sort((a, b) => a.index - b.index);
+    const tasksList = document.querySelector('.list');
     tasksList.innerHTML = '';
     this.tasks.forEach((task) => {
       tasksList.innerHTML += `
@@ -51,6 +48,7 @@ export default class Todo {
       task.index = index;
     });
     setLocalStorage(filteredTasks);
+    this.tasks = getFromLocalStorage();
     this.displayTasks();
   };
 
